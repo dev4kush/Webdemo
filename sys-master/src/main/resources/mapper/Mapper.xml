@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kk.soft.co.jp.sys.mapper.UserMapper">
+
+    <insert id="insert" parameterType="kk.soft.co.jp.sys.model.UserModel" useGeneratedKeys="true" keyProperty="customID">
+        INSERT INTO mp_auth.hieusql(shimei,furigana,birth,id,password,sex,rls,hobbies) 
+        VALUES (#{shimei},#{furigana},#{birth},#{id},#{password},#{sex},#{rls},#{hobbies})
+    </insert>
+  
+  	<select id="checkLogin" resultType="kk.soft.co.jp.sys.model.UserModel"  parameterType = "kk.soft.co.jp.sys.model.UserModel">
+        SELECT * FROM mp_auth.hieusql WHERE ((id = #{id}) and (password = #{password}))
+    </select>
+    
+   
+</mapper>

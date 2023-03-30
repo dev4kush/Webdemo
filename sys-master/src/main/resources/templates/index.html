@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="jp" xmlns:th="http://www.thymeleaf.org" >
+<head >
+    <meta charset="UTF-8" >
+    <title >index</title >
+<style>
+    *{
+		text-align:center;
+	}
+
+    .main{
+        width: 700px;
+        height: 220px;
+		margin:auto;
+		background-color:gray;
+		border-radius: 12px;
+        display:flex;
+    }
+    #title{
+        width: 500px;
+    }
+    #box{
+        width: 200px;
+    }
+    button{
+        border-radius: 12px;
+        color: blue;
+    }
+    #btn1,#btn2,#btn3{
+        margin: 15px;
+        padding: 5px;
+        width: 100px;
+    }
+    
+    
+    
+</style>
+</head >
+<!-- <link rel="stylesheet" type="text/css" th:href="@{css/index.css}"> -->
+<body >
+		<div class="main">
+            <div id="title">
+                <h2>Web Demoへようこそ</h2>
+                <div th:if="${msg}">
+                <h4 th:text="${msg}"></h4>
+                </div>
+            </div>
+
+
+            <div id="box">
+                <form th:action=@{/login} method="get">
+                    <button id="btn1">ログイン</button>
+                </form>
+                <form th:action=@{/register} method="get">
+                    <a href='/register'><button id="btn2">新規登録</button></a>
+                </form>
+                <form th:action=@{/account} method="get">
+                    <a href='/account'><button id="btn3">新規登録済方</button></a>
+                </form>
+            </div>
+        </div>
+</body >
+</html >

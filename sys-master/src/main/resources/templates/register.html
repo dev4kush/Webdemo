@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" >
+<head >
+    <meta charset="UTF-8" >
+    <title >register</title >
+</head >
+<style>
+    body{
+        font-size: 13px;
+         line-height: 19px;
+         background-color: #fff;
+    }
+    #box{
+        width: 300px;
+        height: auto;
+        border: 1px solid #111;
+        margin: 50px auto;
+        padding: 20px;
+    }
+    .custom{
+        margin: 10px;
+
+    }
+
+    .form-control{
+        width: 270px;
+        padding: 5px 5px;
+    }
+    button{
+        width: 280px;
+        margin: 10px 10px;
+        background-color: rgba(226, 197, 102, 0.897);
+        border: none;
+    }
+
+    fieldset{
+        width: 260px;
+        margin: 10px;
+    }
+
+    label{
+        font-weight: 700;
+    }
+</style>
+<body>
+	<form th:action=@{/register} method="post">
+    <div id="box">
+    	
+        <h1 class="inner">アカウントを作成</h2>
+        
+            <div class="custom">
+                <label for="ap_customer_name" class="a-form-label">氏名</label>
+                <input type="text" class="form-control"  name="shimei" placeholder="氏名（例：アダマン　太郎）">
+            </div>
+
+            <div class="custom">
+                <label for="ap_customer_name_pronunciation" class="a-form-label">フリガナ</label>
+                <input type="text" class="form-control" name="furigana" placeholder="あだまん　たろう">
+            </div>
+
+            <div class="custom">
+                <label for="bday">生年月日は？</label>
+                <input type="date" class="form-control"  name="birth" value="年/月/日" min="1900-01-01" max="2023-04-20">
+            </div>
+
+            <div class="custom">
+                <label for="email_phonenumber" class="a-form-label">携帯電話番号またメールアドレス</label>
+                <input type="text" class="form-control"  name="id" placeholder="">
+            </div>
+
+            <div class="custom">
+                <label for="pass" class="a-form-label">パスワード</label>
+                <input type="password" class="form-control" name="password" placeholder="最低６文字必要です">
+            </div>
+            <fieldset>
+                    <legend>性別を選んでください</legend>
+                    <div>
+                        <input type="radio"  name="sex">
+                        <label for="male">男</label>
+                    </div>
+
+                    <div>    
+                        <input type="radio"  name="sex">
+                        <label for="female">女</label>
+                    </div>   
+
+                    <div>
+                        <input type="radio"  name="sex">
+                        <label for="hoka">その他</label>
+                    </div>
+            </fieldset>
+
+            <fieldset>
+                    <label for="relationship">交際ステータス</label>
+                    <select name="rls">
+                        <option value="...">...</option>
+                        <option value="独身">独身</option>
+                        <option value="結婚中">結婚中</option>
+                        <option value="離婚">離婚</option>
+                        <option value="その他">その他</option>
+                    </select>
+            </fieldset>
+
+            <fieldset>
+                    <legend>関心があるものを選んでください</legend>
+                
+                    <div>
+                        <input type="checkbox"  name="hobbies">
+                        <label for="音楽">音楽</label>
+                    </div>
+                
+                    <div>
+                        <input type="checkbox"  name="hobbies">
+                        <label for="映画">映画</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox"  name="hobbies">
+                        <label for="読書">読書</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox"  name="hobbies">
+                        <label for="旅行">旅行</label>
+                    </div>
+            </fieldset>
+            
+         
+                    <button id="button">ログイン</button>
+         
+        
+    </div>
+</form>
+</body >
+</html >

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" >
+<head >
+    <meta charset="UTF-8" >
+    <title >Login</title >
+</head >
+<style>
+    body{
+    font-size: 13px;
+    line-height: 19px;
+    color: #111;
+    background-color: #fff;
+    }
+    #box1{
+        height: auto;
+        width: 300px;
+        border: 1px solid rgb(221, 217, 217);
+        margin: 50px auto;
+        padding: 20px;
+    }
+   #box1 button{
+       width: 280px;
+       margin: 10px 10px;
+       background-color: rgba(226, 197, 102, 0.897);
+    }
+    #box2 button{
+        width: 280px;
+        margin: 10px 10px;
+    }
+
+    button{
+        border: none;
+    }
+  
+    #box2{
+        height: auto;
+        width: 300px;
+        margin: 10px auto;
+        
+    }
+    .char{
+        text-align: center;
+    }
+    .str{
+        margin: 10px 10px;
+    }
+    .form-control{
+        width: 270px;
+        padding: 5px 5px;
+    }
+    #box1 h2{
+        margin-left: 10px;
+    }
+</style>
+<body >
+		<div id="box1">
+            <h2>ログイン</h2>
+            <form th:action="@{/login}"  method="POST">
+            <div class="custom">
+                <label for="id">電話番号またメールアドレス</label>
+                <input type="input" class="form-control" name="id">
+            </div>
+            <div class="custom">
+                <label for="ap_customer_name" class="a-form-label">パスワードを入力</label>
+                <input type="password" class="form-control"name="password">
+            </div>
+            <div>
+                    	<button>次に進む</button>
+			</form>
+            </div>
+		</div>
+        	<div id="box2">
+        		<form th:action=@{/register} method="get">
+                    	<button>次に進む</button>
+             	</form>
+             
+        	</div>
+        
+</body >
+</html >
